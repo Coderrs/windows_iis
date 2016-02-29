@@ -44,16 +44,14 @@ http://docs.puppetlabs.com/puppet/4.3/reference/services_agent_windows.html
 https://docs.puppetlabs.com/windows/troubleshooting.html
 https://puppetlabs.com/blog/managing-permissions-windows-access-control-lists
 
-Helpful commands 
-REM puppet config print modulepath
-
-echo un-installing puppet module 
-puppet module uninstall coders-windows_iis
-
-echo installing puppet module 
-puppet module install coders-windows_iis-0.0.1.tar.gz --ignore-dependencies
-
 #Suggestions of update in puppet-iis:
-In puppet-iis update the dependency tree with inclusion of puppet/windowsfeature.
+In puppet-iis the dependency tree should have puppet/windowsfeature, which will perform required setup of iis and also manage sites
+<br>
+Services are not Managed in the puppet-iis module, and one needs a code to ensure service running instead of passing parameter's to puppet-iis module to manage service.
+<br>
+File / folder creation for site and permissions/Acl's for IIS security.
+<br>
+The puppet-iis module needs more documentation
+
 
 
